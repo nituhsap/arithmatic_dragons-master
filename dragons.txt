@@ -1,0 +1,16 @@
+class RedDragon(Dragon):
+def _init_(self):
+self._health = 150
+self._attack = 20
+self._color = 'красный'
+def question(self):
+x = randint(50,200)
+y = randint(1,50)
+self._quest = str(x) + '-' + str(y)
+self.set_answer(x-y)
+return self._quest
+class BlackDragon(Dragon):
+def _init_(self):
+self._health = 250
+self._attack = 50
+self._color = 'чёрный'
