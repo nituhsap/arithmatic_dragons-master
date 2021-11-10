@@ -16,6 +16,9 @@ def generate_random_enemy():
 def generate_dragon_list(enemy_number):
     enemy_list = [generate_random_enemy() for i in range(enemy_number)]
     return enemy_list
+def generate_magicians_list(enemy_number):
+    enemy_list = [generate_random_enemy() for i in range(enemy_number)]
+    return enemy_list
 
 
 class Dragon(Enemy):
@@ -61,6 +64,44 @@ class BlackDragon(Dragon):
         self._quest = str(x) + '*' + str(y)
         self.set_answer(x*y)
         return self._quest
+
+class Magicians(Enemy):
+    def set_answer(self, answer):
+        self._answer = answer
+    def check__answer(self, answer):
+        return answer == self._answer
+
+class CrazyWitch:
+    def _init_(self):
+        self._health = 10
+        self._attack = 1
+        self. hat_color = 'серо-буро-малиновый'
+    def question(self):
+        x = randint(1,10)
+        self._quest = 'угадай число'
+        self._set_answer(x)
+class CrazyFairy:
+    def _init_(self):
+        self._health = 100   
+        self._attack = -50
+        self. hat_color = 'радужный'
+    def question(self):
+        x = randint(1,10)
+        self._quest = 'угадай число'
+        self._set_answer(x)
+class CunningWizard:
+    def _init_(self):     
+        self._health = 300
+        self._attack = 25
+        self. hat_color = 'невидимка'           
+    def question(self):
+        x = randint(1,100)
+        y = randint(1,100)
+        self._quest = 'Остаток от деления'
+        self._set_answer(x%y)
+
+
+
 
 
 
